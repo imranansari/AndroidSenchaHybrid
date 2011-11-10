@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<!--    <item android:id="@+id/icon"
+          android:icon="@drawable/icon"/>-->
+<!--    <item android:id="@+id/text"
+          android:title="Text"/>-->
+
+    <item android:id="@+id/emailContact"
+          android:title="Email Contact"
+          android:icon="@drawable/user_send"/>
+
+<!--    <item android:id="@+id/settings"
+          android:title="Settings"
+          android:icon="@drawable/settings"/>-->
+</menu>

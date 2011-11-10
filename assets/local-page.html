@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>WebViewApp</title>
+		<!-- WebKit specific values, such as device width and initial scale settings -->
+		<meta name="viewport" content="width=device-width;initial-scale=1;maximum-scale=1;minimum-scale=1;user-scalable=no;"/>
+		<!-- importing style.css file for simple HTML styling -->
+		<style>
+			body,html { overflow:none; background-color:#D6D6D6; padding:0px; margin:0px; border:0px; }
+			#content { padding:15px; padding-top:45px; }
+			p { font:12px Tahoma; color:#2E2222; text-align:justify; }
+			a { font:14px Tahoma; color:#1d4a55; text-decoration:none; font-weight:bold; }
+			#header { position:fixed; z-index:2; background-color:#518fa1; font:13px Tahoma; color:#FFFFFF; width:100%; height:20px; font-weight:bold; padding:5px; border-bottom:10px solid #1d4a55; }
+		</style>
+	</head>
+	<body>
+		<div id="header">
+			WebViewApp
+		</div>
+		
+		<div id="content">
+		
+			<img src="file:///android_asset/local-picture.jpg"/>
+
+			<p>This is local page test, go back <a href="javascript:history.go(-1);">here</a></p>
+			
+		</div>
+	</body>
+</html>
