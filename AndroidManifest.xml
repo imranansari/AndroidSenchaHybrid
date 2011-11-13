@@ -4,7 +4,7 @@
         package="com.webviewapp.app"
         android:installLocation="auto"
         android:versionCode="2"
-        android:versionName="3.3">
+        android:versionName="2.3">
 
     >
     <uses-sdk android:minSdkVersion="10"/>
@@ -13,7 +13,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name='android.permission.READ_PHONE_STATE'/>
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <!--    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>-->
     <!-- note that if app is on SD card it cannot be run at BOOT TIME so BOOT_COMPLETED won't work -->
     <!--
     <uses-permission android:name='android.permission.ACCESS_COARSE_LOCATION' />
@@ -57,27 +57,29 @@
         </activity>
 
         <activity android:name=".MainContainer">
+        </activity>
+
+        <activity android:name=".SearchResults" android:label="Hello"/>
+        <activity android:name=".SearchActivity" android:label="searchActivity"/>
+        <activity android:name=".account_pin">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
-        <activity android:name=".SearchResults" android:label="Hello"/>
-        <activity android:name=".SearchActivity" android:label="searchActivity"/>
         <service android:name=".appService">
             <intent-filter>
                 <action android:name="com.webviewapp.app.appService"/>
             </intent-filter>
         </service>
-        <receiver android:process=":remote" android:name=".appBroadcastReceiver" android:enabled="true"
+        <!--        <receiver android:process=":remote" android:name=".appBroadcastReceiver" android:enabled="true"
                   android:exported="false">
             <intent-filter>
                 <action android:name="com.webviewapp.app.appBroadcastReceiver"/>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
                 <category android:name="android.intent.category.HOME"/>
             </intent-filter>
-        </receiver>
+        </receiver>-->
         <!-- android:hardwareAccelerated="true" in Android 3.0 -->
         <!-- activity for fullscreen is android:theme="@android:style/Theme.NoTitleBar.Fullscreen" -->
     </application>

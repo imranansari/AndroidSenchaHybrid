@@ -3,6 +3,7 @@ package com.webviewapp.app;
 import android.app.TabActivity;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.os.Build;
 import android.os.Bundle;
 import android.widget.TabHost;
 import android.widget.Toast;
@@ -18,6 +19,8 @@ public class MainContainer extends TabActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+         Toast.makeText(MainContainer.this, "Build: "+Build.PRODUCT, Toast.LENGTH_LONG).show();
+
         setContentView(R.layout.main);
 
         Resources res = getResources(); // Resource object to get Drawables

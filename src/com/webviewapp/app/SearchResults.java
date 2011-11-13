@@ -10,6 +10,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.*;
 import android.webkit.WebChromeClient;
@@ -21,10 +22,7 @@ import android.widget.Toast;
 public class SearchResults extends Activity {
 
     /* Customizations */
-    //String baseUrl = "http://webviewapp.waher.net/"; //Web service URL
-    //String baseUrl = "http://10.0.2.2:4567/app";
-    String baseUrl = "http://192.168.0.195:4567/mycontacts";
-    String currentUrl = baseUrl;
+    String baseUrl;
 
     /* Additional variables */
     WebView appBrowser;
@@ -37,6 +35,13 @@ public class SearchResults extends Activity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        if ("sdk".equalsIgnoreCase(Build.PRODUCT)) {
+            baseUrl = "http://10.0.2.2:4567/app";
+        } else {
+            baseUrl = "http://192.168.0.195:4567/mycontacts";
+        }
+
+        String currentUrl = baseUrl;
 
         /* Instance */
         super.onCreate(savedInstanceState);
@@ -164,6 +169,8 @@ public class SearchResults extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
+        Toast.makeText(SearchResults.this, "onResume", Toast.LENGTH_SHORT).show();
+        appBrowser.loadUrl("javascript:reloadMyContactStore()");
     }
 
     @Override
@@ -231,7 +238,9 @@ public class SearchResults extends Activity {
 
     public void setCurrentView(String currentView) {
         this.currentView = currentView;
-        Toast.makeText(SearchResults.this, "currentView " + currentView, Toast.LENGTH_SHORT).show();
+        if (!"sdk".equalsIgnoreCase(Build.PRODUCT)) {
+            Toast.makeText(SearchResults.this, "currentView " + currentView, Toast.LENGTH_SHORT).show();
+        }
     }
 
 }

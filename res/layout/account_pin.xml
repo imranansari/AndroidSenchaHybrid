@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <TextView android:layout_width="fill_parent"
+              android:layout_height="wrap_content" android:text="@string/enterPin" android:gravity="center"
+              android:textSize="40sp" android:padding="60dip"/>
+
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                 android:layout_width="fill_parent"
+                 android:layout_height="fill_parent"
+            >
+        <TableRow android:layout_width="fill_parent" android:gravity="center">
+            <EditText android:id="@+id/pin1" android:layout_width="70sp"
+                      android:gravity="center"
+                      android:maxLength="1"
+                      android:layout_height="65sp"
+                      android:password="true" android:inputType="phone"/>
+            <EditText android:id="@+id/pin2" android:layout_height="65sp" android:layout_width="70sp"
+                      android:gravity="center"
+                      android:maxLength="1"
+                      android:password="true" android:inputType="phone"/>
+            <EditText android:id="@+id/pin3" android:layout_height="65sp" android:layout_width="70sp"
+                      android:gravity="center"
+                      android:maxLength="1"
+                      android:password="true" android:inputType="phone"/>
+            <EditText android:id="@+id/pin4" android:layout_height="65sp" android:layout_width="70sp"
+                      android:gravity="center"
+                      android:maxLength="1"
+                      android:password="true" android:inputType="phone"/>
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>

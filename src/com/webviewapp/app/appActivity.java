@@ -10,6 +10,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.*;
 import android.webkit.WebChromeClient;
@@ -23,8 +24,8 @@ public class appActivity extends Activity {
     /* Customizations */
     //String baseUrl = "http://webviewapp.waher.net/"; //Web service URL
     //String baseUrl = "http://10.0.2.2:4567/app";
-    String baseUrl = "http://192.168.0.195:4567/app?1";
-    String currentUrl = baseUrl;
+    String baseUrl;
+
 
     /* Additional variables */
     WebView appBrowser;
@@ -40,6 +41,14 @@ public class appActivity extends Activity {
 
         /* Instance */
         super.onCreate(savedInstanceState);
+
+        if ("sdk".equalsIgnoreCase(Build.PRODUCT)) {
+            baseUrl = "http://10.0.2.2:4567/app";
+        } else {
+            baseUrl = "http://192.168.0.195:4567/app";
+        }
+
+        String currentUrl = baseUrl;
 
         /* Set the Content View */
         setContentView(R.layout.webview);
@@ -221,7 +230,9 @@ public class appActivity extends Activity {
 
     public void setCurrentView(String _currentView) {
         this.currentView = _currentView;
-        Toast.makeText(appActivity.this, "currentView " + this.currentView, Toast.LENGTH_LONG).show();
+        if (!"sdk".equalsIgnoreCase(Build.PRODUCT)) {
+            Toast.makeText(appActivity.this, "currentView " + this.currentView, Toast.LENGTH_LONG).show();
+        }
     }
 
 

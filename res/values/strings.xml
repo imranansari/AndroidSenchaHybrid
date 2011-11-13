@@ -2,4 +2,5 @@
 <resources>
     <string name="hello">Hello World, WebViewApp!</string>
     <string name="app_name">Field Contacts</string>
+    <string name="enterPin">Enter PIN</string>
 </resources>
